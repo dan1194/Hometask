@@ -7,21 +7,21 @@ public class HomeTask {
      static String baseURI = "http://localhost:8080/";
      static String basePath;
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void getAllProduct() {
         basePath = "get_products";
         Response response = given().when().get().then().statusCode(200).extract().response();
         System.out.println(response.asString());
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void getSingleProduct() {
-        basePath = "get_products";
+        basePath = "/show/1";
         Response response = given().when().get().then().statusCode(200).extract().response();
         System.out.println(response.asString());
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void addProduct() {
         Response response = given()
                 .param("name", "Danish Product")
@@ -32,7 +32,7 @@ public class HomeTask {
         System.out.println(response.asString());
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void editProduct() {
         Response response = given()
                 .param("name", "Danish Product1")
